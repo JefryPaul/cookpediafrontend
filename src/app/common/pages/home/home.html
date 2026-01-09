@@ -1,0 +1,97 @@
+
+<app-header></app-header>
+
+
+  <div class="row bg-success py-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-4 px-5">
+      <h1 class="text-light">
+        The Easiest Way
+        <br>
+        To make your
+        <br>
+        Favorite meal
+      </h1>
+      <p class="mt-5 text-light"></p>
+      <button class="btn btn-warning">Explore Our Recipes</button>
+    </div>
+    <div class="col-md-6">
+      <img id="Landing" class="w-50 ms-auto " src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png" alt="">
+
+    </div>
+  </div>
+  <!-- popularrecipe -->
+  <div class="row mt-5">
+    <h1>Popular Recipe Of The Week</h1>
+
+    <div class="d-flex justify-content-between my-5">
+      <p>Our Most Popular Of The week</p>
+      <a routerLink="/recipe">View All</a>
+    </div>
+
+    <div class="row text-center">
+  @for (recipe of homeRecipes; track $index) {
+    <div class="col-md-4 px-4">
+      <img
+        class="img-fluid rounded"
+        [src]="recipe.image"
+        alt="recipe image"
+      />
+      <h4 class="mt-3">{{ recipe.name }}</h4>
+    </div>
+  }
+
+
+
+  </div>
+  <!-- 50+recipe -->
+  <div class="row p-5 my-5" style="
+      background-image: url('https://t3.ftcdn.net/jpg/07/58/26/62/360_F_758266271_yksdY7RLYIIY6jofjJorjylEDOvgcuze.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    ">
+    <div class="col-md-6 bg-light p-5 rounded">
+      <h1>50+ Recipes that are Very Quick And Fast</h1>
+      <p class="mt-4">
+        Find the perfect food ideas to start
+      </p>
+    </div>
+
+    <div class="col-md-6"></div>
+  </div>
+  <!--  -->
+  <div class="row bg-success p-5 rounded my-5">
+    <div class="col-md-6">
+      <img src="https://toppng.com/uploads/thumbnail/android-app-on-google-play-11568829115kt4gig8l67.png" alt=""
+        class="w-100">
+    </div>
+    <div class="col-md d-flex justify-content-center align-items-center text-light flex-colounm">
+      <h1>Download App</h1>
+      <p class="mt-4">Google pay for Better Experience</p>
+    </div>
+    <div class="col-md d-flex justify-content-center align-items-center">
+      <img src="https://cdn.pixabay.com/photo/2021/09/22/16/07/google-play-6647242_1280.png" alt="" width="150px"
+        height="100px">
+      <img src="https://logos-world.net/wp-content/uploads/2021/02/App-Store-Symbol.png" alt="" width="150px"
+        height="120px" class="ms-4">
+
+    </div>
+  </div>
+  <!-- testimonial -->
+  <div class="row my-5">
+    <h1 class="text-center mt-5">Client Testimonial</h1>
+    <div class="row my-5 d-flex justify-content-center align-items-center">
+      <div class="col-md-4 d-flex justify-content-cenyter align-items-center">
+        <div class="border rounded shadow p-5">
+          <h4 class="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus labore mollitia corporis sed dolores
+              tenetur cum quisquam sunt omnis incidunt ipsa atque dignissimos iure illo perferendis, blanditiis
+              exercitationem maxime! Iusto!</p>
+          </h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

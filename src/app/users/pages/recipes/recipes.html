@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="container">
+        <h4>Filter</h4>
+        <button class="btn mt-5">All</button>
+        <br>
+        <!-- cusine -->
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+          aria-expanded="false " aria-controls="collapseExample">Cuisine</button>
+        <div class="collapse" id="collapseExample">
+          <button class="btn">cuisine</button>
+        </div>
+        <br>
+        <!-- meals -->
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+          aria-expanded="false " aria-controls="collapseExample">Meals Type</button>
+        <div class="collapse" id="collapseExample">
+          <button class="btn">Meals</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1>All Recipes</h1>
+        <input type="text" placeholder="Search your recipe name here!!!" class="form-control w-50">
+      </div>
+      <div class="row my-3">
+   @for (recipe of allRecipes; track $index) {
+        <div routerLink="/viewed/4/recipe" class="col-lg-4">
+          <div class="p-3">
+            <img class="card-img-top" [src]="recipe.image" alt="">
+            <div class="card-body mt-3">
+              <h5 class="caed-title">{{recipe.name}}</h5>
+              <p class="mt-2">{{recipe.cuisine}}</p>
+            </div>
+          </div>
+        </div>
+        }
+        <div class="fw-border fs-5 my-5 text-danger">Recipe Not Found!!!</div>
+      </div>
+
+    </div>
+  </div>
+</div>

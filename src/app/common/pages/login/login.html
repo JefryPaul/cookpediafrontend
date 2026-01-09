@@ -1,0 +1,92 @@
+<div
+  class="container-fluid d-flex justify-content-center align-items-center flex-column text-white"
+  style="
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://tse1.mm.bing.net/th/id/OIP.uttOiEvve8qHMGK_n3c1VAHaE8?pid=Api&P=0&h=180');
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <h1 class="mb-2">Login</h1>
+  <p class="mb-4">More than 100+ recipes around the world</p>
+
+  <!-- 🔑 formGroup + ngSubmit added -->
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+    style="width: 100%; max-width: 400px;"
+    class="bg-white text-dark shadow border rounded p-4"
+  >
+    <!-- Header -->
+    <div class="mb-4 d-flex justify-content-between align-items-center">
+      <span routerLink="/" class="text-success fs-5 cursor-pointer">
+        <i class="fa-solid fa-house"></i>
+      </span>
+      <h4 class="m-0 text-success">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </h4>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        placeholder="Email"
+      />
+
+      <!-- Validation message -->
+      <small
+        class="text-danger"
+        *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+      >
+        Please enter a valid email
+      </small>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        placeholder="Password"
+      />
+
+      <!-- Validation message -->
+      <small
+        class="text-danger"
+        *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+      >
+        Invalid password
+      </small>
+    </div>
+
+    <!-- Button -->
+    <div class="d-grid mt-3">
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </div>
+
+    <!-- Register -->
+    <div class="mt-3 text-center">
+      <p class="mb-0">
+        New users?
+        <span
+          routerLink="/register"
+          class="text-primary fw-semibold cursor-pointer"
+        >
+          Click here
+        </span>
+        to register
+      </p>
+    </div>
+  </form>
+</div>
